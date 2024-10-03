@@ -7,15 +7,34 @@
 
 import SwiftUI
 
+//ContentView inheritance with View
 struct ContentView: View {
+    @State var products: Products?
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            ProductsView(products: $products)
+                .padding()
         }
-        .padding()
+        .task {
+            guard let url = Bundle.main.url(forResource: "Products", withExtension: "json") else {
+                //show error
+                print("No Products.json File Found in the Bundle.")
+                return
+            }
+            
+            //Convert it in raw Data
+            do {
+                let data = try Data(contentsOf: url)
+                products = try JSONDecoder().decode(Products.self, from: data)
+            }
+            catch{
+                print(error.localizedDescription)
+            }
+            
+        }
+
+
     }
 }
 
