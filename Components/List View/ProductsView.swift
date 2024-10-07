@@ -17,16 +17,32 @@ struct ProductsView: View {
     
     var body: some View {
         
-        ForEach(products ?? [], id: \.self){ product in
-            ProductCell(product: product)
+        List {
+            ForEach(products ?? [], id: \.self){ product in
+                
+                NavigationLink {
+                    ProductDetailView(product: Binding(get: {product}, set: {_ in }))
+                } label: {
+                    ProductCell(product: product)
+                }
+
+            }
         }
         
     }
 }
 
-//#Preview {
-//    ProductsView()
-//}
+#Preview {
+    
+
+    ProductsView(products: Binding(get: {
+        
+        
+        let products: Products?  = try? Bundle.main.decode(resource: "Products", extension: "json")
+        return products
+        
+    }, set: {_ in }))
+}
 
 //1. i need Data -> Json File -> Load json file
 //Create Model using https://app.quicktype.io
@@ -37,3 +53,9 @@ struct ProductsView: View {
 //Assigment
 //@State: It is more like a local variable, scope is confined to a view and data is kind of private
 //@binding: It is more to access across different views.
+
+
+//7october
+//Error Enum
+//Extension -> Bundle
+//Func of T type 

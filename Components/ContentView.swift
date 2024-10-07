@@ -16,22 +16,14 @@ struct ContentView: View {
             ProductsView(products: $products)
                 .padding()
         }
+        .navigationTitle("Products")
         .task {
-            guard let url = Bundle.main.url(forResource: "Products", withExtension: "json") else {
-                //show error
-                print("No Products.json File Found in the Bundle.")
-                return
-            }
-            
-            //Convert it in raw Data
-            do {
-                let data = try Data(contentsOf: url)
-                products = try JSONDecoder().decode(Products.self, from: data)
+            do{
+                products  = try Bundle.main.decode(resource: "Products", extension: "json")
             }
             catch{
                 print(error.localizedDescription)
             }
-            
         }
 
 
