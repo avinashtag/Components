@@ -35,5 +35,5 @@ struct ProductsView: View {
 
 
 //Assigment
-//@State:
-//@binding: 
+//@State: It is more like a local variable, scope is confined to a view and data is kind of private
+//@binding: It is more to access across different views.
