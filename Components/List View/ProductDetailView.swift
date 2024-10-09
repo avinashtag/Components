@@ -17,16 +17,20 @@ struct ProductDetailView: View {
         
         VStack(alignment: .leading, content: {
             
-            AsyncImage(url: URL(string: product.image)) { image in
-                image
-                    .resizable()
-                    .frame(width: 200, height: 200)
-                    .aspectRatio(16/9,contentMode: .fit)
+            HStack(content: {
+                Spacer()
+                AsyncImage(url: URL(string: product.image)) { image in
+                    image
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                        .aspectRatio(16/9,contentMode: .fit)
 
-            } placeholder: {
-                ProgressView()
-                    .frame(width: 200, height: 200)
-            }
+                } placeholder: {
+                    ProgressView()
+                        .frame(width: 200, height: 200)
+                }
+                Spacer()
+            })
             
             Text(product.title)
                 .font(.title)
