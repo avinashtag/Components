@@ -38,6 +38,7 @@ struct TabBar: View {
             }
             
         }
+        .tint(.blue)
         .task {
             do{
                 products  = try Bundle.main.decode(resource: "Products", extension: "json")
@@ -46,8 +47,8 @@ struct TabBar: View {
                 print(error.localizedDescription)
             }
         }
-
     }
+        
 }
 
 #Preview {
