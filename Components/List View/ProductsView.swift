@@ -28,6 +28,7 @@ struct ProductsView: View {
 
             }
         }
+        .navigationTitle("Products")
         
     }
 }

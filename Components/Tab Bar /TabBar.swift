@@ -12,6 +12,7 @@ struct TabBar: View {
     
     @State private var productNavigationPath: NavigationPath = NavigationPath()
     @State private var cartNavigationPath: NavigationPath = NavigationPath()
+    @State private var profileNavigationPath: NavigationPath = NavigationPath()
 
 
     var body: some View {
@@ -28,7 +29,7 @@ struct TabBar: View {
             }
             
             NavigationStack(path: $cartNavigationPath) {
-                ProductsView(products: $products)
+                CartView(products: $products)
             }
             .tabItem {
                 VStack{
@@ -36,6 +37,17 @@ struct TabBar: View {
                     Text("Cart")
                 }
             }
+            
+            NavigationStack(path: $profileNavigationPath) {
+                ProfileView()
+            }
+            .tabItem {
+                VStack{
+                    Image(systemName: "person.fill")
+                    Text("Profile")
+                }
+            }
+
             
         }
         .task {
@@ -57,5 +69,11 @@ struct TabBar: View {
 /*
  //Assigment
  1. Tint color for tabbar
+ 
+ 
+ Left item 16 oct
+ 1. Searchbar
+ 2. Swipe to remove from cart
+ 3. Detail page add to cart
  
  */

@@ -26,8 +26,14 @@ struct ProductCell: View {
           
             VStack(alignment: .leading, content: {
                 Text(product.title)
+                    .font(.title3)
+                    .padding(.bottom, 5)
                 Text(product.description)
-                Text("\(product.price)")
+                    .font(.body)
+                    .padding(.bottom, 5)
+                Text("$\(product.price, specifier: "%.2f")")
+                    .font(.body.bold())
+
             })
 
         } )

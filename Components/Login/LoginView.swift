@@ -15,31 +15,42 @@ struct LoginView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading, content: {
-            Text("Username")
-            TextField(text: $username) {
-                Text("Username placeholder")
-            }
-            .textFieldStyle(.roundedBorder)
-            .padding(.bottom, 10)
-            Text("Password")
-            SecureField(text: $password) {
-                Text("Password placeholder")
-            }
-            .textFieldStyle(.roundedBorder)
-            .padding(.bottom, 20)
-            
-            HStack{
+        ScrollView {
+            VStack(alignment: .leading, content: {
                 Spacer()
-                Button(action: {
-                    isLogin.toggle()
-                }, label: {
-                    Text("login".uppercased())
-                })
+                Text("Username")
+                TextField(text: $username) {
+                    Text("Username placeholder")
+                }
+                .textFieldStyle(.roundedBorder)
+                .padding(.bottom, 10)
+                Text("Password")
+                SecureField(text: $password) {
+                    Text("Password placeholder")
+                }
+                .textFieldStyle(.roundedBorder)
+                .padding(.bottom, 20)
+                
+                HStack{
+                    Spacer()
+                    Button(action: {
+                        isLogin.toggle()
+                    }, label: {
+                        Text("login".uppercased())
+                    })
+                    Spacer()
+                }
                 Spacer()
-            }
-        })
-        .padding()
+            })
+            .frame(height: UIScreen.main.bounds.height)
+            .padding(.horizontal, 40)
+//            .overlay(content: {
+//                RoundedRectangle(cornerSize: CGSize(width: 20, height: 10))
+//                    .background(.red)
+//            })
+            .shadow(color: .gray, radius: 10)
+        }
+        .ignoresSafeArea()
         .fullScreenCover(isPresented: $isLogin, content: {
             TabBar()
         })
