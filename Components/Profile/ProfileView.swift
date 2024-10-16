@@ -13,6 +13,8 @@ struct ProfileView: View {
     
     @Environment  (\.dismiss) var dismiss
 
+    @State private var dob: Date = Date()
+    
     var body: some View {
         List {
             Section {
@@ -24,13 +26,29 @@ struct ProfileView: View {
                     Spacer()
                 }
             }
+            Section("Profile") {
+                HStack{
+                    //MARK: Try to give dates range play with it
+                    DatePicker(selection: $dob, in: Date()..., displayedComponents: [ .date]) {
+                        Text("Date Of Birth")
+                            .font(.body)
+                    }
+                    .font(.body)
+                }
+            }
             Section {
-                Button(action: {
-                    dismiss()
-                }, label: {
+                HStack{
+                    Image(systemName: "power")
+                        .tint(.red)
                     Text("Log Out")
-                        .font(.body)
+                }
+                .onTapGesture(perform: {
+//                    print("\(dob.formatted(date: .long, time: .omitted))")
+                    dismiss()
                 })
+//                .onTapGesture(count: 5, perform: {
+//                    dismiss()
+//                })
             }
         }
     }

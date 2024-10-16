@@ -14,13 +14,22 @@ struct TabBar: View {
     @State private var cartNavigationPath: NavigationPath = NavigationPath()
     @State private var profileNavigationPath: NavigationPath = NavigationPath()
 
+    @State private var searchText: String = ""
+    
+    var filteredProducts: Products? {
+        if searchText.isEmpty { return products }
+        else {
+            return products?.filter({$0.title.lowercased().contains(searchText.lowercased())})
+        }
+    }
 
     var body: some View {
         
         TabView {
             NavigationStack(path: $productNavigationPath) {
-                ProductsView(products: $products)
+                ProductsView(products: searchText.isEmpty ? $products : Binding(get: {filteredProducts}, set: {_ in }))
             }
+            .searchable(text: $searchText, placement: .automatic)
             .tabItem {
                 VStack{
                     Image(systemName: "list.bullet")

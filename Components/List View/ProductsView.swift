@@ -29,20 +29,32 @@ struct ProductsView: View {
             }
         }
         .navigationTitle("Products")
+        .toolbar(content: {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    //Create a List View
+                    //show all category products 
+                }, label: {
+                    Image(systemName: "line.3.horizontal.decrease.circle")
+                })
+            }
+        })
+
         
     }
 }
 
 #Preview {
     
-
-    ProductsView(products: Binding(get: {
-        
-        
-        let products: Products?  = try? Bundle.main.decode(resource: "Products", extension: "json")
-        return products
-        
-    }, set: {_ in }))
+    NavigationStack {
+        ProductsView(products: Binding(get: {
+            
+            
+            let products: Products?  = try? Bundle.main.decode(resource: "Products", extension: "json")
+            return products
+            
+        }, set: {_ in }))
+    }
 }
 
 //1. i need Data -> Json File -> Load json file
