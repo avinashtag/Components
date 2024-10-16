@@ -12,14 +12,24 @@ struct CartView: View {
 
     var body: some View {
         
-        List{
-            Section("Products To Buy") {
-                ForEach(products ?? [], id: \.self){ product in
-                    
-                    CartCell(product: product)
-                    
+        VStack{
+            List{
+                Section("Products To Buy") {
+                    ForEach(products ?? [], id: \.self){ product in
+                        
+                        CartCell(product: product)
+                        
+                    }
                 }
+                
             }
+            Spacer()
+            HStack{
+                Text("Total Amount")
+                Spacer()
+                Text("$\(products?.compactMap({$0.price}).reduce(0, +) ?? 0 , specifier: "%.2f")")
+            }
+            .padding()
         }
         .navigationTitle("Cart")
         
