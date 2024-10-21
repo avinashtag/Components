@@ -13,7 +13,8 @@ import SwiftUI
 struct ProductsView: View {
     
     @Binding var products: Products?
-    
+    @State private var presentFilterSheet: Bool = false
+
     
     var body: some View {
         
@@ -34,10 +35,17 @@ struct ProductsView: View {
                 Button(action: {
                     //Create a List View
                     //show all category products 
+                    presentFilterSheet.toggle()
                 }, label: {
                     Image(systemName: "line.3.horizontal.decrease.circle")
                 })
             }
+        })
+        .sheet(isPresented: $presentFilterSheet, content: {
+            FilterView( didSelectCategory: { categories in
+                print(categories)
+                //Assigment to filter product with the categories
+            })
         })
 
         

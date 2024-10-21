@@ -11,7 +11,7 @@ struct ProfileView: View {
     //Read Environment on developer . apaple
     // Def: TODO
     
-    @Environment  (\.dismiss) var dismiss
+    @Environment(\.dismiss) var dismiss
 
     @State private var dob: Date = Date()
     
