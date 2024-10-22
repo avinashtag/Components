@@ -14,7 +14,6 @@ struct ProductsView: View {
     
     @Binding var products: Products?
     @State private var presentFilterSheet: Bool = false
-
     
     var body: some View {
         
@@ -45,12 +44,15 @@ struct ProductsView: View {
             FilterView( didSelectCategory: { categories in
                 print(categories)
                 //Assigment to filter product with the categories
+                ForEach(categories) { category in
+                    products?.filter(\.self.contrast.contains(category))
+                }
+                    
             })
-        })
+        }
 
         
     }
-}
 
 #Preview {
     
