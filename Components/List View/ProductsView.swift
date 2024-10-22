@@ -14,7 +14,12 @@ struct ProductsView: View {
     
     @Binding var products: Products?
     @State private var presentFilterSheet: Bool = false
-    
+    @State private var filtersDataSource: [Filter] = [
+        Filter(category: .electronics, isSelected: false),
+        Filter(category: .jewelery, isSelected: false),
+        Filter(category: .menSClothing, isSelected: false),
+        Filter(category: .womenSClothing, isSelected: false)]
+
     var body: some View {
         
         List {
@@ -25,7 +30,7 @@ struct ProductsView: View {
                 } label: {
                     ProductCell(product: product)
                 }
-
+                
             }
         }
         .navigationTitle("Products")
@@ -33,7 +38,7 @@ struct ProductsView: View {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
                     //Create a List View
-                    //show all category products 
+                    //show all category products
                     presentFilterSheet.toggle()
                 }, label: {
                     Image(systemName: "line.3.horizontal.decrease.circle")
@@ -41,18 +46,21 @@ struct ProductsView: View {
             }
         })
         .sheet(isPresented: $presentFilterSheet, content: {
-            FilterView( didSelectCategory: { categories in
+            FilterView( filtersDataSource: $filtersDataSource, didSelectCategory: { categories in
                 print(categories)
                 //Assigment to filter product with the categories
-                ForEach(categories) { category in
-                    products?.filter(\.self.contrast.contains(category))
+                for category in categories{
+                    //Not working properly when we select two categories
+                    //Assignment fis this bug 22 October
+                    products = products?.filter({category.rawValue.contains($0.category.rawValue)})
                 }
-                    
+                
             })
-        }
-
+        })
+        
         
     }
+}
 
 #Preview {
     

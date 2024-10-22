@@ -14,11 +14,7 @@ struct Filter: Hashable{
 
 struct FilterView: View {
     
-    @State private var filtersDataSource: [Filter] = [
-        Filter(category: .electronics, isSelected: false),
-        Filter(category: .jewelery, isSelected: false),
-        Filter(category: .menSClothing, isSelected: false),
-        Filter(category: .womenSClothing, isSelected: false)]
+    @Binding var filtersDataSource: [Filter]
     @Environment(\.dismiss) var dismiss
 
     var didSelectCategory: (([Category])->Void)
@@ -62,7 +58,13 @@ struct FilterView: View {
 }
 
 #Preview {
-    FilterView( didSelectCategory: { _ in
+    FilterView( filtersDataSource: Binding(get: {
+        [
+            Filter(category: .electronics, isSelected: false),
+            Filter(category: .jewelery, isSelected: false),
+            Filter(category: .menSClothing, isSelected: false),
+            Filter(category: .womenSClothing, isSelected: false)]
+    }, set: { _ in }), didSelectCategory: { _ in
         
     })
 }
