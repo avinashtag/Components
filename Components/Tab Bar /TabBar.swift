@@ -16,6 +16,8 @@ struct TabBar: View {
 
     @State private var searchText: String = ""
     
+    var myqueue = DispatchQueue(label: "MyQueueKarthik",qos: .background, attributes: .concurrent)
+    
     var filteredProducts: Products? {
         if searchText.isEmpty { return products }
         else {
@@ -56,17 +58,32 @@ struct TabBar: View {
                     Text("Profile")
                 }
             }
-
-            
         }
         .tint(.blue)
         .task {
-            do{
-                products  = try Bundle.main.decode(resource: "Products", extension: "json")
-            }
-            catch{
-                print(error.localizedDescription)
-            }
+            Task(priority: .background, operation: {
+                do{
+                    products  = try Bundle.main.decode(resource: "Products", extension: "json")
+                    DispatchQueue.main.async {
+                        // Main  thread - Serial
+
+                        //Load View
+                        
+                    }
+                    
+                    DispatchQueue.global().async {
+                        // background thread - parallel
+                    }
+                    
+                    myqueue.async {
+                        //Code to perform on this thread
+                    }
+                }
+                catch{
+                    print(error.localizedDescription)
+                }
+            })
+            
         }
     }
         

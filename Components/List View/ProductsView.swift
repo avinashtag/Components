@@ -10,6 +10,17 @@ import SwiftUI
 
 
 
+/*
+ Multithreading
+ 1. GCD - Grand Central Dispatch - Written in C - Faster , limited Priority, no dependency, grouping is possible, Non cancellable, no resume functionality, No pause
+ 2. Nsoperation, Operation - Swiftui Task- Set prioirty, dependency, Cancellable, Resume, Pause, suspend
+ 
+ Note:
+ 
+ - Show data on view *Always be on main thread else Crash
+ */
+
+
 struct ProductsView: View {
     
     @Binding var products: Products?
