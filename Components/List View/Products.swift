@@ -24,11 +24,18 @@ struct RequestProducts: Codable{
     
     func fetch() async throws -> [Product]{
         
-        guard let url = URL(string: "https://fakestoreapi.com/products") else { throw Errors.invalidURL }
-        let urlRequest = URLRequest(url: url)
-        let (data, urlResponse) = try await URLSession.shared.data(for: urlRequest)
-        let result = try JSONDecoder().decode([Product].self, from: data)
-        return result
+        let products: [Product] = try await Network.shared.fetch(httpMethod: .GET)
+        return products
+        
+        //Simple Way to Implement API
+//        guard let url = URL(string: "https://fakestoreapi.com/products") else { throw Errors.invalidURL }
+//        var urlRequest = URLRequest(url: url)
+//        urlRequest.httpMethod = "GET"
+//        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//
+//        let (data, urlResponse) = try await URLSession.shared.data(for: urlRequest)
+//        let result = try JSONDecoder().decode([Product].self, from: data)
+//        return result
     }
     
 }

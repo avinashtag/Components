@@ -50,36 +50,6 @@
             endingLineNumber = "66"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "8B509809-F601-47C2-B20E-7C09577BE31E - b198dcfa016e675d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;Components.Category&gt;) -&gt; () in closure #3 () -&gt; Components.FilterView in Components.ProductsView.body.getter : some"
-                  moduleName = "Components"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/avinash/Documents/My%20Projects/Components/Components/List%20View/ProductsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66">
-               </Location>
-               <Location
-                  uuid = "8B509809-F601-47C2-B20E-7C09577BE31E - 1e4818152ec79ddd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Components.Product) -&gt; Swift.Bool in closure #1 (Swift.Array&lt;Components.Category&gt;) -&gt; () in closure #3 () -&gt; Components.FilterView in Components.ProductsView.body.getter : some"
-                  moduleName = "Components"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/avinash/Documents/My%20Projects/Components/Components/List%20View/ProductsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -140,8 +110,24 @@
             filePath = "Components/List View/Products.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "fetch()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "546CE041-A0AF-4F1E-91D1-F69922466323"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Components/List View/Products.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "fetch()"
             landmarkType = "7">
          </BreakpointContent>
