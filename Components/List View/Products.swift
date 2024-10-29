@@ -7,6 +7,31 @@
 
 import Foundation
 
+enum Errors: Error{
+    case invalidURL
+    
+    var localizedDescription: String{
+        switch self {
+        case .invalidURL: return "Invalid Url"
+        }
+    }
+}
+
+
+struct RequestProducts: Codable{
+//https://fakestoreapi.com/products
+    
+    
+    func fetch() async throws -> [Product]{
+        
+        guard let url = URL(string: "https://fakestoreapi.com/products") else { throw Errors.invalidURL }
+        let urlRequest = URLRequest(url: url)
+        let (data, urlResponse) = try await URLSession.shared.data(for: urlRequest)
+        let result = try JSONDecoder().decode([Product].self, from: data)
+        return result
+    }
+    
+}
 
 struct Product: Codable, Hashable {
     static func == (lhs: Product, rhs: Product) -> Bool {

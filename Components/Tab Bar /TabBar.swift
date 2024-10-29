@@ -63,7 +63,10 @@ struct TabBar: View {
         .task {
             Task(priority: .background, operation: {
                 do{
-                    products  = try Bundle.main.decode(resource: "Products", extension: "json")
+                    
+                    
+                    products = try await RequestProducts().fetch()
+//                    products  = try Bundle.main.decode(resource: "Products", extension: "json")
                     DispatchQueue.main.async {
                         // Main  thread - Serial
 
