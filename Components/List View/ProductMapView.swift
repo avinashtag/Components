@@ -109,6 +109,10 @@ struct ProductMapView: View {
         .onMapCameraChange { context in
             visibleRegion = context.region
         }
+        .onChange(of: selected) {
+            getDirections()
+        }
+
         
     }
     
