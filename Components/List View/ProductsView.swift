@@ -63,7 +63,8 @@ struct ProductsView: View {
                 for category in categories{
                     //Not working properly when we select two categories
                     //Assignment fis this bug 22 October
-                    products = products?.filter({category.rawValue.contains($0.category.rawValue)})
+                    products = products?.filter({categories.contains($0.category)})
+                    print(category, categories)
                 }
                 
             })
