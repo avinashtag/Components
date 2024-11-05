@@ -44,6 +44,15 @@ struct ProductDetailView: View {
             Spacer()
         } )
         .padding()
+        .toolbar(content: {
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+                    ProductMapView()
+                } label: {
+                    Image(systemName: "map")
+                }
+            }
+        })
         
     }
 }
