@@ -59,6 +59,12 @@
 		E1F259792CD9C62600FD0EBE /* ProductMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F259782CD9C62600FD0EBE /* ProductMapView.swift */; };
 		E1F2597A2CD9C62600FD0EBE /* ProductMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F259782CD9C62600FD0EBE /* ProductMapView.swift */; };
 		E1F2597B2CD9C62600FD0EBE /* ProductMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F259782CD9C62600FD0EBE /* ProductMapView.swift */; };
+		E1F2597D2CDA612500FD0EBE /* BeantownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2597C2CDA612500FD0EBE /* BeantownButton.swift */; };
+		E1F2597E2CDA612500FD0EBE /* BeantownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2597C2CDA612500FD0EBE /* BeantownButton.swift */; };
+		E1F2597F2CDA612500FD0EBE /* BeantownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2597C2CDA612500FD0EBE /* BeantownButton.swift */; };
+		E1F259812CDA6C1E00FD0EBE /* MapItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F259802CDA6C1E00FD0EBE /* MapItemDetails.swift */; };
+		E1F259822CDA6C1E00FD0EBE /* MapItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F259802CDA6C1E00FD0EBE /* MapItemDetails.swift */; };
+		E1F259832CDA6C1E00FD0EBE /* MapItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F259802CDA6C1E00FD0EBE /* MapItemDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +110,8 @@
 		E1F259492CD0ABA600FD0EBE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		E1F2594D2CD0ABF200FD0EBE /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		E1F259782CD9C62600FD0EBE /* ProductMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMapView.swift; sourceTree = "<group>"; };
+		E1F2597C2CDA612500FD0EBE /* BeantownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeantownButton.swift; sourceTree = "<group>"; };
+		E1F259802CDA6C1E00FD0EBE /* MapItemDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapItemDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +212,8 @@
 				E1875B352CAE565A0031C173 /* ProductCell.swift */,
 				E1875B4A2CB39B750031C173 /* ProductDetailView.swift */,
 				E1F259782CD9C62600FD0EBE /* ProductMapView.swift */,
+				E1F259802CDA6C1E00FD0EBE /* MapItemDetails.swift */,
+				E1F2597C2CDA612500FD0EBE /* BeantownButton.swift */,
 			);
 			path = "List View";
 			sourceTree = "<group>";
@@ -403,6 +413,8 @@
 				E1875B822CC61E340031C173 /* FilterView.swift in Sources */,
 				E1875B552CB63C890031C173 /* TabBar.swift in Sources */,
 				E1875B012CAE52400031C173 /* ContentView.swift in Sources */,
+				E1F259812CDA6C1E00FD0EBE /* MapItemDetails.swift in Sources */,
+				E1F2597D2CDA612500FD0EBE /* BeantownButton.swift in Sources */,
 				E1875B4B2CB39B750031C173 /* ProductDetailView.swift in Sources */,
 				E1F2594E2CD0ABF200FD0EBE /* Network.swift in Sources */,
 				E1875B472CB398D10031C173 /* ComponentError.swift in Sources */,
@@ -430,7 +442,9 @@
 				E1875B832CC61E340031C173 /* FilterView.swift in Sources */,
 				E1875B5B2CB63F7B0031C173 /* LoginView.swift in Sources */,
 				E1F2597A2CD9C62600FD0EBE /* ProductMapView.swift in Sources */,
+				E1F259822CDA6C1E00FD0EBE /* MapItemDetails.swift in Sources */,
 				E1875B562CB63C890031C173 /* TabBar.swift in Sources */,
+				E1F2597E2CDA612500FD0EBE /* BeantownButton.swift in Sources */,
 				E1875B372CAE565A0031C173 /* ProductCell.swift in Sources */,
 				E1875B2B2CAE52CC0031C173 /* ProductsView.swift in Sources */,
 				E1875B482CB398D10031C173 /* ComponentError.swift in Sources */,
@@ -448,6 +462,8 @@
 				E1875B842CC61E340031C173 /* FilterView.swift in Sources */,
 				E1875B572CB63C890031C173 /* TabBar.swift in Sources */,
 				E1875B1C2CAE52440031C173 /* ComponentsUITestsLaunchTests.swift in Sources */,
+				E1F259832CDA6C1E00FD0EBE /* MapItemDetails.swift in Sources */,
+				E1F2597F2CDA612500FD0EBE /* BeantownButton.swift in Sources */,
 				E1875B4D2CB39B750031C173 /* ProductDetailView.swift in Sources */,
 				E1F259502CD0ABF200FD0EBE /* Network.swift in Sources */,
 				E1875B492CB398D10031C173 /* ComponentError.swift in Sources */,
