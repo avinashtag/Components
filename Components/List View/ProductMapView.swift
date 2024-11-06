@@ -9,18 +9,6 @@ import SwiftUI
 import MapKit
 
 
-//Model
-struct Location : Identifiable{
-    
-    let id = UUID()
-    var name : String
-    var coordinate: CLLocationCoordinate2D
-}
-
-extension CLLocationCoordinate2D{
-    static let parking = CLLocationCoordinate2D(latitude: 42.354528, longitude: -71.068369)
-}
-
 extension MKCoordinateRegion {
     
     static let boston = MKCoordinateRegion ( center: CLLocationCoordinate2D( latitude: 42.360256,
@@ -35,6 +23,15 @@ extension MKCoordinateRegion {
             latitudeDelta: 0.5,
             longitudeDelta: 0.5))
     
+    static let delhi = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(
+            latitude: 28.6139,
+            longitude: 77.2088),
+        span: MKCoordinateSpan(
+            latitudeDelta: 0.5,
+            longitudeDelta: 0.5))
+
+    
 }
 
 struct ProductMapView: View {
@@ -46,11 +43,6 @@ struct ProductMapView: View {
     @State var route: MKRoute?
 
     
-    
-    @State var locations = [
-        Location(name: "Kuala Lumpur", coordinate: CLLocationCoordinate2DMake(3.1319, 101.6841)),
-        Location(name: "Singapore", coordinate: CLLocationCoordinate2DMake(1.3521, 103.8198))
-    ]
     var body: some View {
         
         MapReader { proxy in

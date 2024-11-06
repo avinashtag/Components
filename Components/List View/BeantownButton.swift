@@ -47,7 +47,7 @@ struct BeantownButton: View {
             Button(action: {
                 position = .region(.boston)
             }, label: {
-                Label("Boston", systemImage: "bulding.2")
+                Label("Boston", systemImage: "building.2")
             })
             .buttonStyle(.borderedProminent)
 
@@ -57,6 +57,14 @@ struct BeantownButton: View {
                 Label("North Shore", systemImage: "water.waves")
             })
             .buttonStyle(.borderedProminent)
+            
+            Button(action: {
+                position = .region(.delhi)
+            }, label: {
+                Label("Delhi", systemImage: "building")
+            })
+            .buttonStyle(.borderedProminent)
+
 
         }
         .labelStyle(.iconOnly)

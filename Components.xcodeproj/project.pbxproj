@@ -65,6 +65,9 @@
 		E1F259812CDA6C1E00FD0EBE /* MapItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F259802CDA6C1E00FD0EBE /* MapItemDetails.swift */; };
 		E1F259822CDA6C1E00FD0EBE /* MapItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F259802CDA6C1E00FD0EBE /* MapItemDetails.swift */; };
 		E1F259832CDA6C1E00FD0EBE /* MapItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F259802CDA6C1E00FD0EBE /* MapItemDetails.swift */; };
+		E1F259A42CDB31EC00FD0EBE /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F259A32CDB31EC00FD0EBE /* CLLocationCoordinate2D+Extension.swift */; };
+		E1F259A52CDB31EC00FD0EBE /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F259A32CDB31EC00FD0EBE /* CLLocationCoordinate2D+Extension.swift */; };
+		E1F259A62CDB31EC00FD0EBE /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F259A32CDB31EC00FD0EBE /* CLLocationCoordinate2D+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +115,7 @@
 		E1F259782CD9C62600FD0EBE /* ProductMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMapView.swift; sourceTree = "<group>"; };
 		E1F2597C2CDA612500FD0EBE /* BeantownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeantownButton.swift; sourceTree = "<group>"; };
 		E1F259802CDA6C1E00FD0EBE /* MapItemDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapItemDetails.swift; sourceTree = "<group>"; };
+		E1F259A32CDB31EC00FD0EBE /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				E1875B422CB398150031C173 /* Bundle+Extension.swift */,
+				E1F259A32CDB31EC00FD0EBE /* CLLocationCoordinate2D+Extension.swift */,
 				E1875B462CB398D10031C173 /* ComponentError.swift */,
 			);
 			path = Utility;
@@ -416,6 +421,7 @@
 				E1F259812CDA6C1E00FD0EBE /* MapItemDetails.swift in Sources */,
 				E1F2597D2CDA612500FD0EBE /* BeantownButton.swift in Sources */,
 				E1875B4B2CB39B750031C173 /* ProductDetailView.swift in Sources */,
+				E1F259A42CDB31EC00FD0EBE /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				E1F2594E2CD0ABF200FD0EBE /* Network.swift in Sources */,
 				E1875B472CB398D10031C173 /* ComponentError.swift in Sources */,
 				E1875B732CBE29FE0031C173 /* ProfileView.swift in Sources */,
@@ -447,6 +453,7 @@
 				E1F2597E2CDA612500FD0EBE /* BeantownButton.swift in Sources */,
 				E1875B372CAE565A0031C173 /* ProductCell.swift in Sources */,
 				E1875B2B2CAE52CC0031C173 /* ProductsView.swift in Sources */,
+				E1F259A52CDB31EC00FD0EBE /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				E1875B482CB398D10031C173 /* ComponentError.swift in Sources */,
 				E1875B742CBE29FE0031C173 /* ProfileView.swift in Sources */,
 				E1F2594F2CD0ABF200FD0EBE /* Network.swift in Sources */,
@@ -465,6 +472,7 @@
 				E1F259832CDA6C1E00FD0EBE /* MapItemDetails.swift in Sources */,
 				E1F2597F2CDA612500FD0EBE /* BeantownButton.swift in Sources */,
 				E1875B4D2CB39B750031C173 /* ProductDetailView.swift in Sources */,
+				E1F259A62CDB31EC00FD0EBE /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				E1F259502CD0ABF200FD0EBE /* Network.swift in Sources */,
 				E1875B492CB398D10031C173 /* ComponentError.swift in Sources */,
 				E1875B752CBE29FE0031C173 /* ProfileView.swift in Sources */,
