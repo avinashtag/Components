@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct TabBar: View {
-    @State var products: Products?
+    
+    @Environment(\.modelContext) private var modelContext
+
+    @Query var products: [Product]?
     
     @State private var productNavigationPath: NavigationPath = NavigationPath()
     @State private var cartNavigationPath: NavigationPath = NavigationPath()
@@ -29,7 +33,8 @@ struct TabBar: View {
         
         TabView {
             NavigationStack(path: $productNavigationPath) {
-                ProductsView(products: searchText.isEmpty ? $products : Binding(get: {filteredProducts}, set: {_ in }))
+                ProductsView()
+//                ProductsView(products: searchText.isEmpty ? $products : Binding(get: {filteredProducts}, set: {_ in }))
             }
             .searchable(text: $searchText, placement: .automatic)
             .tabItem {
@@ -39,15 +44,15 @@ struct TabBar: View {
                 }
             }
             
-            NavigationStack(path: $cartNavigationPath) {
-                CartView(products: $products)
-            }
-            .tabItem {
-                VStack{
-                    Image(systemName: "cart")
-                    Text("Cart")
-                }
-            }
+//            NavigationStack(path: $cartNavigationPath) {
+//                CartView(products: $products)
+//            }
+//            .tabItem {
+//                VStack{
+//                    Image(systemName: "cart")
+//                    Text("Cart")
+//                }
+//            }
             
             NavigationStack(path: $profileNavigationPath) {
                 ProfileView()
@@ -65,7 +70,12 @@ struct TabBar: View {
                 do{
                     
                     
-                    products = try await RequestProducts().fetch()
+                   let products = try await RequestProducts().fetch()
+                    //Insert pproduct in db
+                    for product in products {
+                        self.modelContext.insert(product)
+                    }
+                    
 //                    products  = try Bundle.main.decode(resource: "Products", extension: "json")
                     DispatchQueue.main.async {
                         // Main  thread - Serial

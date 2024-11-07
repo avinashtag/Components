@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftData
 
 enum Errors: Error{
     case invalidURL
@@ -25,6 +26,7 @@ struct RequestProducts: Codable{
     func fetch() async throws -> [Product]{
         
         let products: [Product] = try await Network.shared.fetch(httpMethod: .GET)
+        
         return products
         
         //Simple Way to Implement API
@@ -40,7 +42,8 @@ struct RequestProducts: Codable{
     
 }
 
-struct Product: Codable, Hashable {
+@Model
+class Product: Codable, Hashable {
     static func == (lhs: Product, rhs: Product) -> Bool {
         lhs.id == rhs.id
     }
@@ -49,13 +52,44 @@ struct Product: Codable, Hashable {
         hasher.combine(id)
     }
 
+    @Attribute(.unique)
     var id: Int
+    
     var title: String
     var price: Double
-    var description: String
+    var dscription: String
     var category: Category
     var image: String
     var rating: Rating
+    
+    enum Codingkeys: String, CodingKey{
+        case id
+        case title
+        case price
+        case dscription = "description"
+        case category
+        case image
+        case rating
+    }
+    
+    required init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: Codingkeys.self)
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.title = try container.decode(String.self, forKey: .title)
+        self.price = try container.decode(Double.self, forKey: .price)
+        self.dscription = try container.decode(String.self, forKey: .dscription)
+        self.category = try container.decode(Category.self, forKey: .category)
+        self.image = try container.decode(String.self, forKey: .image)
+        self.rating = try container.decode(Rating.self, forKey: .rating)
+    }
+    
+    func encode(to encoder: any Encoder) throws {
+        //Posting api
+        var container = try encoder.container(keyedBy: Codingkeys.self)
+        try container.encodeIfPresent(self.id, forKey: .id)
+        try container.encodeIfPresent(self.price, forKey: .price)
+    }
+    
 }
 
 enum Category: String, Codable {

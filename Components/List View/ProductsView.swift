@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+import SwiftData
 
 
 /*
@@ -23,7 +23,7 @@ import SwiftUI
 
 struct ProductsView: View {
     
-    @Binding var products: Products?
+    @Query var products: [Product]?
     @State private var presentFilterSheet: Bool = false
     @State private var filtersDataSource: [Filter] = [
         Filter(category: .electronics, isSelected: false),
@@ -63,7 +63,7 @@ struct ProductsView: View {
                 for category in categories{
                     //Not working properly when we select two categories
                     //Assignment fis this bug 22 October
-                    products = products?.filter({categories.contains($0.category)})
+//                    products = products?.filter({categories.contains($0.category)})
                     print(category, categories)
                 }
                 
@@ -74,18 +74,18 @@ struct ProductsView: View {
     }
 }
 
-#Preview {
-    
-    NavigationStack {
-        ProductsView(products: Binding(get: {
-            
-            
-            let products: Products?  = try? Bundle.main.decode(resource: "Products", extension: "json")
-            return products
-            
-        }, set: {_ in }))
-    }
-}
+//#Preview {
+//    
+//    NavigationStack {
+//        ProductsView(products: Binding(get: {
+//            
+//            
+//            let products: Products?  = try? Bundle.main.decode(resource: "Products", extension: "json")
+//            return products
+//            
+//        }, set: {_ in }))
+//    }
+//}
 
 //1. i need Data -> Json File -> Load json file
 //Create Model using https://app.quicktype.io
