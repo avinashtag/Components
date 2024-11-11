@@ -28,7 +28,7 @@ struct ProductCell: View {
                 Text(product.title)
                     .font(.title3)
                     .padding(.bottom, 5)
-                Text(product.description)
+                Text(product.dscription)
                     .font(.body)
                     .padding(.bottom, 5)
                 Text("$\(product.price, specifier: "%.2f")")
@@ -41,6 +41,6 @@ struct ProductCell: View {
     }
 }
 
-#Preview {
-    ProductCell(product: Product(id: 0, title: "Karthik", price: 10, description: "My Description", category: .electronics, image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg", rating: .init(rate: 4, count: 5)))
-}
+//#Preview {
+//    ProductCell(product: Product(id: 0, title: "Karthik", price: 10, description: "My Description", category: .electronics, image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg", rating: .init(rate: 4, count: 5)))
+//}

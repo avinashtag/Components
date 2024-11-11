@@ -19,15 +19,19 @@ enum Errors: Error{
 }
 
 
+
 struct RequestProducts: Codable{
 //https://fakestoreapi.com/products
     
     
     func fetch() async throws -> [Product]{
         
-        let products: [Product] = try await Network.shared.fetch(httpMethod: .GET)
-        
-        return products
+        DispatchQueue.global().asyncAfter(deadline: .now() + 10) {
+            //Notification
+            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "ProductSyncesSuccess")))
+        }
+            let products: [Product] = try await Network.shared.fetch(httpMethod: .GET)
+            return products
         
         //Simple Way to Implement API
 //        guard let url = URL(string: "https://fakestoreapi.com/products") else { throw Errors.invalidURL }

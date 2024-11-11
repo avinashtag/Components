@@ -23,7 +23,9 @@ import SwiftData
 
 struct ProductsView: View {
     
-    @Query var products: [Product]?
+    @Query var products: [Product]
+    
+    @Binding var searchText: String 
     @State private var presentFilterSheet: Bool = false
     @State private var filtersDataSource: [Filter] = [
         Filter(category: .electronics, isSelected: false),
@@ -31,10 +33,17 @@ struct ProductsView: View {
         Filter(category: .menSClothing, isSelected: false),
         Filter(category: .womenSClothing, isSelected: false)]
 
+    var filteredProducts: Products? {
+        if searchText.isEmpty { return products }
+        else {
+            return products.filter({$0.title.lowercased().contains(searchText.lowercased())})
+        }
+    }
+
     var body: some View {
         
         List {
-            ForEach(products ?? [], id: \.self){ product in
+            ForEach(filteredProducts ?? [], id: \.self){ product in
                 
                 NavigationLink {
                     ProductDetailView(product: Binding(get: {product}, set: {_ in }))
@@ -69,6 +78,15 @@ struct ProductsView: View {
                 
             })
         })
+        .task {
+
+            NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: "ProductSyncesSuccess"), object: nil, queue: nil) { notification in
+                //Here you can write the code after your notification
+                
+                
+                print("Product List")
+            }
+        }
         
         
     }
@@ -102,3 +120,10 @@ struct ProductsView: View {
 //Error Enum
 //Extension -> Bundle
 //Func of T type 
+
+
+//TODO: Assigment 11 Nov
+/*
+ 1. Work with category filteration
+ 2. Read Notification
+ */

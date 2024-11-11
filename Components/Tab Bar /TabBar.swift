@@ -10,10 +10,7 @@ import SwiftData
 
 struct TabBar: View {
     
-    @Environment(\.modelContext) private var modelContext
-
-    @Query var products: [Product]?
-    
+    @Environment(\.modelContext) private var modelContext    
     @State private var productNavigationPath: NavigationPath = NavigationPath()
     @State private var cartNavigationPath: NavigationPath = NavigationPath()
     @State private var profileNavigationPath: NavigationPath = NavigationPath()
@@ -22,19 +19,12 @@ struct TabBar: View {
     
     var myqueue = DispatchQueue(label: "MyQueueKarthik",qos: .background, attributes: .concurrent)
     
-    var filteredProducts: Products? {
-        if searchText.isEmpty { return products }
-        else {
-            return products?.filter({$0.title.lowercased().contains(searchText.lowercased())})
-        }
-    }
 
     var body: some View {
         
         TabView {
             NavigationStack(path: $productNavigationPath) {
-                ProductsView()
-//                ProductsView(products: searchText.isEmpty ? $products : Binding(get: {filteredProducts}, set: {_ in }))
+                ProductsView(searchText: $searchText)
             }
             .searchable(text: $searchText, placement: .automatic)
             .tabItem {
@@ -74,7 +64,16 @@ struct TabBar: View {
                     //Insert pproduct in db
                     for product in products {
                         self.modelContext.insert(product)
+                        
+                        //To Delete product
+                       // self.modelContext.delete(product)
+                        
+                        //To update
+//                        product.price = 20
+//                        try? self.modelContext.save()
                     }
+                    
+                    
                     
 //                    products  = try Bundle.main.decode(resource: "Products", extension: "json")
                     DispatchQueue.main.async {

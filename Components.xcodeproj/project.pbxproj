@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E1875AFF2CAE52400031C173 /* ComponentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1875AFE2CAE52400031C173 /* ComponentsApp.swift */; };
-		E1875B012CAE52400031C173 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1875B002CAE52400031C173 /* ContentView.swift */; };
 		E1875B032CAE52440031C173 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1875B022CAE52440031C173 /* Assets.xcassets */; };
 		E1875B062CAE52440031C173 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1875B052CAE52440031C173 /* Preview Assets.xcassets */; };
 		E1875B102CAE52440031C173 /* ComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1875B0F2CAE52440031C173 /* ComponentsTests.swift */; };
@@ -90,7 +89,6 @@
 /* Begin PBXFileReference section */
 		E1875AFB2CAE52400031C173 /* Components.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Components.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1875AFE2CAE52400031C173 /* ComponentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsApp.swift; sourceTree = "<group>"; };
-		E1875B002CAE52400031C173 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E1875B022CAE52440031C173 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1875B052CAE52440031C173 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E1875B0B2CAE52440031C173 /* ComponentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComponentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,7 +172,6 @@
 				E1875B282CAE52A30031C173 /* List View */,
 				E1875B532CB63C6F0031C173 /* Tab Bar  */,
 				E1875AFE2CAE52400031C173 /* ComponentsApp.swift */,
-				E1875B002CAE52400031C173 /* ContentView.swift */,
 				E1875B022CAE52440031C173 /* Assets.xcassets */,
 				E1875B042CAE52440031C173 /* Preview Content */,
 			);
@@ -417,7 +414,6 @@
 				E1F2594A2CD0ABA600FD0EBE /* Endpoint.swift in Sources */,
 				E1875B822CC61E340031C173 /* FilterView.swift in Sources */,
 				E1875B552CB63C890031C173 /* TabBar.swift in Sources */,
-				E1875B012CAE52400031C173 /* ContentView.swift in Sources */,
 				E1F259812CDA6C1E00FD0EBE /* MapItemDetails.swift in Sources */,
 				E1F2597D2CDA612500FD0EBE /* BeantownButton.swift in Sources */,
 				E1875B4B2CB39B750031C173 /* ProductDetailView.swift in Sources */,

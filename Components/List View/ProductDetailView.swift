@@ -35,7 +35,7 @@ struct ProductDetailView: View {
             Text(product.title)
                 .font(.title)
                 .padding(.bottom)
-            Text(product.description)
+            Text(product.dscription)
                 .font(.body)
                 .padding(.bottom)
             Text("\(product.price,specifier:"%.2f")")
@@ -53,17 +53,26 @@ struct ProductDetailView: View {
                 }
             }
         })
+        .task {
+            NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: "ProductSyncesSuccess"), object: nil, queue: nil) { notification in
+                //Here you can write the code after your notification
+                
+                
+                print("Product Detail")
+            }
+
+        }
         
     }
 }
 
-#Preview {
-    
-
-    ProductDetailView(product: Binding(get: {
-        Product(id: 0, title: "Karthik", price: 10, description: "Here is my description ", category: .electronics, image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg", rating: Rating(rate: 4, count: 5))
-    }, set: {_ in }))
-}
+//#Preview {
+//    
+//
+//    ProductDetailView(product: Binding(get: {
+//        Product(id: 0, title: "Karthik", price: 10, description: "Here is my description ", category: .electronics, image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg", rating: Rating(rate: 4, count: 5))
+//    }, set: {_ in }))
+//}
 
 
 //Assigment
