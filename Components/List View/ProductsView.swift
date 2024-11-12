@@ -46,7 +46,9 @@ struct ProductsView: View {
             ForEach(filteredProducts ?? [], id: \.self){ product in
                 
                 NavigationLink {
-                    ProductDetailView(product: Binding(get: {product}, set: {_ in }))
+                    ProductDetailView(product: Binding(get: {product}, set: {_ in }), didComplete: { productTitle in
+                        print("\(productTitle)")
+                    })
                 } label: {
                     ProductCell(product: product)
                 }

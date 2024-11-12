@@ -23,6 +23,12 @@ enum Errors: Error{
 struct RequestProducts: Codable{
 //https://fakestoreapi.com/products
     
+    func fetchWith(completion: (([Product])->Void)?){
+        Network.shared.fetch(httpMethod: .GET) { (pr: [Product]) in
+            completion?(pr)
+        }
+    }
+    
     
     func fetch() async throws -> [Product]{
         

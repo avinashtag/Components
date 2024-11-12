@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+struct Credentials: Codable{
+    var username: String
+    var password: String
+}
+
+extension String{
+    static let userdefaultCrentials: String = "Credentials"
+}
+
 struct LoginView: View {
     
     @State private var username: String = ""
@@ -35,6 +44,12 @@ struct LoginView: View {
                     Spacer()
                     Button(action: {
                         isLogin.toggle()
+                        //Save data in userdefault
+                        
+                        let credentials = Credentials(username: username, password: password)
+                        let encoded = try? JSONEncoder().encode(credentials)
+                        UserDefaults.standard.setValue(encoded, forKey: .userdefaultCrentials)
+                        UserDefaults.standard.synchronize()
                     }, label: {
                         Text("login".uppercased())
                     })
@@ -54,6 +69,14 @@ struct LoginView: View {
         .fullScreenCover(isPresented: $isLogin, content: {
             TabBar()
         })
+        .task {
+            //Retrieve Data from Userdefault
+            let data = UserDefaults.standard.value(forKey: .userdefaultCrentials)
+            guard let credentials = try? JSONDecoder().decode(Credentials.self, from: data! as! Data) else { return }
+            
+            username = credentials.username
+            password = credentials.password
+        }
 //        .sheet(isPresented: , content: {
 //        })
     }

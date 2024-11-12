@@ -11,7 +11,7 @@ import SwiftUI
 struct ProductDetailView: View {
     
     @Binding var product: Product
-    
+    var didComplete: (String)->Void
     
     var body: some View {
         
@@ -40,7 +40,14 @@ struct ProductDetailView: View {
                 .padding(.bottom)
             Text("\(product.price,specifier:"%.2f")")
                 .font(.body)
-                
+            
+            Button(action: {
+                didComplete(product.title)
+
+            }, label: {
+                Label("Closure", systemImage: "ellipsis.curlybraces")
+            })
+            .buttonStyle(.borderedProminent)
             Spacer()
         } )
         .padding()
