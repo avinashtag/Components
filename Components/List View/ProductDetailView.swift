@@ -48,6 +48,11 @@ struct ProductDetailView: View {
                 Label("Closure", systemImage: "ellipsis.curlybraces")
             })
             .buttonStyle(.borderedProminent)
+            
+            NavigationLink(destination: GalleryView()) {
+                Label("Gallery", systemImage: "photo")
+            }
+
             Spacer()
         } )
         .padding()
@@ -73,13 +78,19 @@ struct ProductDetailView: View {
     }
 }
 
-//#Preview {
-//    
-//
-//    ProductDetailView(product: Binding(get: {
-//        Product(id: 0, title: "Karthik", price: 10, description: "Here is my description ", category: .electronics, image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg", rating: Rating(rate: 4, count: 5))
-//    }, set: {_ in }))
-//}
+#Preview {
+    
+
+    ProductDetailView(product: Binding(get: {
+        
+        
+        let products: Products?  = try? Bundle.main.decode(resource: "Products", extension: "json")
+        return products!.first!
+        
+    }, set: {_ in }), didComplete: {_ in
+        
+    })
+}
 
 
 //Assigment
