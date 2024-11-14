@@ -12,10 +12,15 @@ struct CameraView: UIViewControllerRepresentable {
     
     @Binding var selectedImage: Image?
     @Environment(\.presentationMode) var isPresented
+    let controller = UIImagePickerController()
+
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(picker: self)
+    }
     
     func makeUIViewController(context: Context) -> UIImagePickerController {
-        let controller = UIImagePickerController()
         controller.sourceType = .camera
+        controller.delegate = context.coordinator
         return controller
     }
     
@@ -24,7 +29,7 @@ struct CameraView: UIViewControllerRepresentable {
     }
 }
 
-class Coordinator: NSObject, UINavigationBarDelegate, UIImagePickerControllerDelegate{
+class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     var picker: CameraView
     

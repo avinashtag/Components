@@ -59,6 +59,10 @@ struct ProductDetailView: View {
                 Label("Video", systemImage: "video")
             }
             .buttonStyle(.borderedProminent)
+            
+            //+6587861134
+            Link("Call", destination: URL(string: "tel:06587861134")!)
+            Link("E-Mail", destination: URL(string: "mailto:avi.tag@outlook.com")!)
 
             
 

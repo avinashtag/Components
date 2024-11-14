@@ -71,8 +71,8 @@ struct LoginView: View {
         })
         .task {
             //Retrieve Data from Userdefault
-            let data = UserDefaults.standard.value(forKey: .userdefaultCrentials)
-            guard let credentials = try? JSONDecoder().decode(Credentials.self, from: data! as! Data) else { return }
+            guard let data = UserDefaults.standard.value(forKey: .userdefaultCrentials) as? Data else { return }
+            guard let credentials = try? JSONDecoder().decode(Credentials.self, from: data) else { return }
             
             username = credentials.username
             password = credentials.password
