@@ -52,6 +52,15 @@ struct ProductDetailView: View {
             NavigationLink(destination: GalleryView()) {
                 Label("Gallery", systemImage: "photo")
             }
+            .buttonStyle(.borderedProminent)
+            .tint(.blue)
+            
+            NavigationLink(destination: VideoPlayerView()) {
+                Label("Video", systemImage: "video")
+            }
+            .buttonStyle(.borderedProminent)
+
+            
 
             Spacer()
         } )

@@ -13,6 +13,9 @@
 		E111088C2CE471610022199D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E111088B2CE471610022199D /* CameraView.swift */; };
 		E111088D2CE471610022199D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E111088B2CE471610022199D /* CameraView.swift */; };
 		E111088E2CE471610022199D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E111088B2CE471610022199D /* CameraView.swift */; };
+		E11108902CE5BF710022199D /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E111088F2CE5BF710022199D /* VideoPlayerView.swift */; };
+		E11108912CE5BF710022199D /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E111088F2CE5BF710022199D /* VideoPlayerView.swift */; };
+		E11108922CE5BF710022199D /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E111088F2CE5BF710022199D /* VideoPlayerView.swift */; };
 		E1875AFF2CAE52400031C173 /* ComponentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1875AFE2CAE52400031C173 /* ComponentsApp.swift */; };
 		E1875B032CAE52440031C173 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1875B022CAE52440031C173 /* Assets.xcassets */; };
 		E1875B062CAE52440031C173 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1875B052CAE52440031C173 /* Preview Assets.xcassets */; };
@@ -95,6 +98,7 @@
 /* Begin PBXFileReference section */
 		E11108872CE46E7D0022199D /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		E111088B2CE471610022199D /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		E111088F2CE5BF710022199D /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		E1875AFB2CAE52400031C173 /* Components.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Components.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1875AFE2CAE52400031C173 /* ComponentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsApp.swift; sourceTree = "<group>"; };
 		E1875B022CAE52440031C173 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 				E1F2597C2CDA612500FD0EBE /* BeantownButton.swift */,
 				E11108872CE46E7D0022199D /* GalleryView.swift */,
 				E111088B2CE471610022199D /* CameraView.swift */,
+				E111088F2CE5BF710022199D /* VideoPlayerView.swift */,
 			);
 			path = "List View";
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 				E11108882CE46E7D0022199D /* GalleryView.swift in Sources */,
 				E1875B5A2CB63F7B0031C173 /* LoginView.swift in Sources */,
 				E1875B2A2CAE52CC0031C173 /* ProductsView.swift in Sources */,
+				E11108902CE5BF710022199D /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +474,7 @@
 				E11108892CE46E7D0022199D /* GalleryView.swift in Sources */,
 				E1F2594F2CD0ABF200FD0EBE /* Network.swift in Sources */,
 				E1875B102CAE52440031C173 /* ComponentsTests.swift in Sources */,
+				E11108912CE5BF710022199D /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +485,7 @@
 				E1F2594C2CD0ABA600FD0EBE /* Endpoint.swift in Sources */,
 				E1875B842CC61E340031C173 /* FilterView.swift in Sources */,
 				E1875B572CB63C890031C173 /* TabBar.swift in Sources */,
+				E11108922CE5BF710022199D /* VideoPlayerView.swift in Sources */,
 				E1875B1C2CAE52440031C173 /* ComponentsUITestsLaunchTests.swift in Sources */,
 				E1F259832CDA6C1E00FD0EBE /* MapItemDetails.swift in Sources */,
 				E1F2597F2CDA612500FD0EBE /* BeantownButton.swift in Sources */,
@@ -642,6 +650,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Components/Preview Content\"";
+				DEVELOPMENT_TEAM = WT2885ZX46;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access required in order to take picture.";
@@ -672,6 +681,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Components/Preview Content\"";
+				DEVELOPMENT_TEAM = WT2885ZX46;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access required in order to take picture.";
